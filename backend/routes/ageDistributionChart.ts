@@ -6,7 +6,6 @@ const router = express.Router();
 router.get('/age-distribution', async (req, res) => {
   try {
     const data = await AgeDistributionModel.find().sort({ _id: 1 });
-    console.log('Age distribution data sent:', data);
     res.json(data);
   } catch (err) {
     console.error('Age distribution fetch error:', err);
