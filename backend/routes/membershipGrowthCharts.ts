@@ -6,7 +6,6 @@ const router = express.Router();
 router.get('/membership', async (req, res) => {
   try {
     const data = await MembershipModel.find().sort({ _id: 1 });
-    console.log('Membership data sent:', data);
     res.json(data);
   } catch (err) {
     console.error('Membership fetch error:', err);

@@ -6,7 +6,6 @@ const router = express.Router();
 router.get('/attendance', async (req, res) => {
   try {
     const data = await AttendanceModel.find().sort({ _id: 1 });
-    console.log('Attendance data sent:', data);
     res.json(data);
   } catch (err) {
     console.error('Attendance fetch error:', err);
